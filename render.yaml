@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: researchmind-ai-backend
+    env: python
+    region: singapore
+    buildCommand: cd backend && pip install -r requirements.txt
+    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ENV
+        value: production
+      - key: PROJECT_NAME
+        value: "Multi-Agent AI Research Assistant"
+      - key: OPENAI_MODEL
+        value: "gpt-4o-mini"
+      - key: SEARCH_PROVIDER
+        value: "tavily"
+      - key: DATABASE_URL
+        value: "sqlite+aiosqlite:///./multi_agent_research.db"
