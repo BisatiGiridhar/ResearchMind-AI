@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 import { Bot, Search, BookOpen, Database, CheckCircle2, ShieldCheck, Layers, FileText, Check, Cpu } from 'lucide-react';
 
 export interface AgentNode {
-  id: str;
-  name: str;
-  role: str;
+  id: string;
+  name: string;
+  role: string;
   icon: React.ElementType;
 }
 

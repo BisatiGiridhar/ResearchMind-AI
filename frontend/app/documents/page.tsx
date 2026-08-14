@@ -39,7 +39,7 @@ export default function DocumentsPage() {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
-      setSuccess(`File '${file.filename || file.name}' uploaded and parsed successfully into ${res.data.chunk_count} chunks.`);
+      setSuccess(`File '${file.name}' uploaded and parsed successfully into ${res.data.chunk_count} chunks.`);
       fetchDocuments();
     } catch (err: any) {
       setError(err.response?.data?.detail || 'Failed to upload and parse document.');
